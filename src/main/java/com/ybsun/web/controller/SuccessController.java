@@ -12,7 +12,6 @@ import java.util.Map;
  */
 @Controller
 public class SuccessController {
-
     /**
      * 这里需要注意的是返回时一个页面，而不是一个值
      * 所以不能加@RequestBody 同理类上不能加RestController
@@ -24,4 +23,9 @@ public class SuccessController {
         map.put("users", Arrays.asList("zhansan", "lisi", "wangwu"));
         return "success";
     }
+
+     /* @RequestMapping({"/", "/index"})
+    public String index() {
+        return "index";
+    }*/
 }
