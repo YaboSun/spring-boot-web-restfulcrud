@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- 导入 thymeleaf 名称空间添加 xmlns 能够支持 thymeleaf 语法-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>成功</h1>
+<hr/>
+<!-- th:text 将div设置为指定的值-->
+<!-- 这里注意text和utext区别就是一个是转义显示原标签内容，一个显示原内容-->
+<h2>
+    <div th:text="${hello}"></div>
+    <div th:utext="${hello}"></div>
+</h2>
+
+<!-- 下面俩种遍历操作，一个会生成四个h3标题，一个会在一层-->
+<hr/>
+<h3>
+    <div th:text="${name}" th:each="name: ${users}"></div>
+</h3>
+<hr/>
+<h3>
+    <span th:each="name: ${users}"> [[${name}]] </span>
+</h3>
+</body>
+</html>
