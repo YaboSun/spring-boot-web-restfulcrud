@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * 扩展SpringMvc功能，浏览器访问viewController可以响应success
  */
 @Configuration
-public class MyMvcController extends WebMvcConfigurerAdapter {
+public class MyMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/viewController").setViewName("success");
@@ -29,6 +29,7 @@ public class MyMvcController extends WebMvcConfigurerAdapter {
             public void addViewControllers(ViewControllerRegistry registry) {
                 registry.addViewController("/").setViewName("login");
                 registry.addViewController("/index.html").setViewName("login");
+                registry.addViewController("/main.html").setViewName("dashboard");
             }
         };
         return adapter;
